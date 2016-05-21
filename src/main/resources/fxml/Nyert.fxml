@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="371.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GrafikusFelulet.NyertController">
+<AnchorPane id="AnchorPane" prefHeight="371.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafikusFelulet.NyertController">
    <children>
       <Label fx:id="nyertLabel" alignment="CENTER" layoutX="19.0" layoutY="114.0" prefHeight="90.0" prefWidth="562.0" text="Jatekos nyert!">
          <font>

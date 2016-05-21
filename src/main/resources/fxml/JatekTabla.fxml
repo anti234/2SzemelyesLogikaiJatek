@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="669.0" prefWidth="553.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GrafikusFelulet.JatekTablaController">
+<AnchorPane id="AnchorPane" prefHeight="669.0" prefWidth="553.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafikusFelulet.JatekTablaController">
     <children>
         <GridPane fx:id="gridPane1" alignment="CENTER" gridLinesVisible="true" layoutX="127.0" layoutY="124.0" prefHeight="300.0" prefWidth="300.0">
             <columnConstraints>
@@ -26,7 +26,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
-        <GridPane fx:id="gridPane" alignment="CENTER" layoutX="87.0" layoutY="84.0" onMouseClicked="#GridPaneMouseAction" prefHeight="380.0" prefWidth="380.0">
+        <GridPane fx:id="gridPane" alignment="CENTER" layoutX="87.0" layoutY="84.0" onMouseClicked="#gridPaneMouseAction" prefHeight="380.0" prefWidth="380.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -43,13 +43,14 @@
             </rowConstraints>
         </GridPane>
         <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" />
-      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="113.0">
+      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="15.0" prefWidth="195.0">
         <menus>
           <Menu mnemonicParsing="false" text="Játék">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#UjJatekMenuItemAction" text="Új Játék" />
-                  <MenuItem mnemonicParsing="false" onAction="#AtnevezesMenuItemAction" text="Játékosok Átenevezése" />
-                  <MenuItem mnemonicParsing="false" onAction="#KilepesMenuItemAction" text="Kilepes" />
+              <MenuItem mnemonicParsing="false" onAction="#ujJatekMenuItemAction" text="Új Játék" />
+                  <MenuItem mnemonicParsing="false" onAction="#atnevezesMenuItemAction" text="Játékosok Átenevezése" />
+                  <MenuItem mnemonicParsing="false" onAction="#eredmenyekMenuItemAction" text="Eredmények" />
+                  <MenuItem mnemonicParsing="false" onAction="#kilepesMenuItemAction" text="Kilepes" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Sugó" />

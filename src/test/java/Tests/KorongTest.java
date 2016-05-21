@@ -1,50 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tests;
 
-import Jatek.Korong;
-import Jatek.Szin;
+import jatek.Korong;
+import jatek.Szin;
+
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class KorongTest {
 
     @Test
-    public void ErvenyesXTest() {
+    public void ervenyesXTest() {
         for (int i = 0; i < 5; i++) {
-            assertTrue((new Korong(i, 0).ErvenyesX()));
+            assertTrue((new Korong(i, 0).ervenyesX()));
         }
-        assertFalse((new Korong(-1, 0).ErvenyesX()));
-        assertFalse((new Korong(5, 0).ErvenyesX()));
+        assertFalse((new Korong(-1, 0).ervenyesX()));
+        assertFalse((new Korong(5, 0).ervenyesX()));
     }
 
     @Test
-    public void ErvenyesYTest() {
+    public void ervenyesYTest() {
         for (int i = 0; i < 5; i++) {
-            assertTrue((new Korong(0, i).ErvenyesY()));
+            assertTrue((new Korong(0, i).ervenyesY()));
         }
-        assertFalse((new Korong(0, -1).ErvenyesY()));
-        assertFalse((new Korong(0, 5).ErvenyesY()));
+        assertFalse((new Korong(0, -1).ervenyesY()));
+        assertFalse((new Korong(0, 5).ervenyesY()));
     }
 
     @Test
-    public void EqualsTest() {
+    public void equalsTest() {
         Korong korong1 = new Korong(1, 1, Szin.Kek);
         assertFalse(korong1.equals(new Korong(2, 1, Szin.Kek)));
         assertFalse(korong1.equals(new Korong(1, 2, Szin.Kek)));
         assertFalse(korong1.equals(new Korong(2, 1, Szin.Sarga)));
         assertTrue(korong1.equals(new Korong(1, 1, Szin.Kek)));
+        assertFalse(korong1.equals(null));
     }
 
     @Test
-    public void EgyenloKoordinatakTest() {
+    public void egyenloKoordinatakTest() {
         Korong korong1 = new Korong(1, 1, Szin.Kek);
-        assertFalse(korong1.EgyenloKoordinatak(new Korong(2, 1, Szin.Kek)));
-        assertFalse(korong1.EgyenloKoordinatak(new Korong(1, 2, Szin.Kek)));
-        assertTrue(korong1.EgyenloKoordinatak(new Korong(1, 1, Szin.Sarga)));
-        assertTrue(korong1.EgyenloKoordinatak(new Korong(1, 1, Szin.Kek)));
+        assertFalse(korong1.egyenloKoordinatak(new Korong(2, 1, Szin.Kek)));
+        assertFalse(korong1.egyenloKoordinatak(new Korong(1, 2, Szin.Kek)));
+        assertTrue(korong1.egyenloKoordinatak(new Korong(1, 1, Szin.Sarga)));
+        assertTrue(korong1.egyenloKoordinatak(new Korong(1, 1, Szin.Kek)));
+        assertFalse(korong1.equals(null));
     }
 }

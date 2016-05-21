@@ -1,28 +1,26 @@
 package Tests;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import Jatek.Jatek;
-import Jatek.Korong;
-import Jatek.Lepesek;
-import Jatek.Szin;
+import jatek.Jatek;
+import jatek.Korong;
+import jatek.Lepesek;
+import jatek.Szin;
+
 import java.util.Arrays;
 import java.util.List;
+
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 
 public class LepesekTest {
 
     @Test
-    public void LepesTest() {
+    public void lepesTest() {
         Jatek jatek = new Jatek();
         Lepesek lepesek = jatek.getLepes();
         List<Korong> korongok = lepesek.getKorongok();
-        if (lepesek.Lepes(korongok.get(0), new Korong(1, 1)) > 0) {
+        if (lepesek.lepes(korongok.get(0), new Korong(1, 1)) > 0) {
             korongok.set(0, new Korong(1, 1, Szin.Kek));
             assertEquals(korongok, lepesek.getKorongok());
         } else {
@@ -31,37 +29,37 @@ public class LepesekTest {
     }
 
     @Test
-    public void ElerhatoRacspontTest() {
+    public void elerhatoRacspontTest() {
         Jatek jatek = new Jatek();
         Lepesek lepesek = jatek.getLepes();
-        assertTrue(lepesek.ElerhetoRacsPont(new Korong(1, 1), new Korong(2, 2)));
-        assertTrue(lepesek.ElerhetoRacsPont(new Korong(5, 4), new Korong(4, 3)));
-        assertTrue(lepesek.ElerhetoRacsPont(new Korong(4, 3), new Korong(5, 2)));
-        assertTrue(lepesek.ElerhetoRacsPont(new Korong(2, 3), new Korong(1, 4)));
-        assertFalse(lepesek.ElerhetoRacsPont(new Korong(2, 3), new Korong(3, 3)));
-        assertFalse(lepesek.ElerhetoRacsPont(new Korong(2, 3), new Korong(2, 2)));
-        assertFalse(lepesek.ElerhetoRacsPont(new Korong(1, 1), new Korong(2, 4)));
+        assertTrue(lepesek.elerhetoRacsPont(new Korong(1, 1), new Korong(2, 2)));
+        assertTrue(lepesek.elerhetoRacsPont(new Korong(5, 4), new Korong(4, 3)));
+        assertTrue(lepesek.elerhetoRacsPont(new Korong(4, 3), new Korong(5, 2)));
+        assertTrue(lepesek.elerhetoRacsPont(new Korong(2, 3), new Korong(1, 4)));
+        assertFalse(lepesek.elerhetoRacsPont(new Korong(2, 3), new Korong(3, 3)));
+        assertFalse(lepesek.elerhetoRacsPont(new Korong(2, 3), new Korong(2, 2)));
+        assertFalse(lepesek.elerhetoRacsPont(new Korong(1, 1), new Korong(2, 4)));
     }
 
     @Test
-    public void SzabadRacspontTest() {
+    public void szabadRacspontTest() {
         Jatek jatek = new Jatek();
         Lepesek lepesek = jatek.getLepes();
-        assertTrue(lepesek.SzabadRacspont(new Korong(1, 1, Szin.Kek)));
-        assertTrue(lepesek.SzabadRacspont(new Korong(1, 1, Szin.Sarga)));
-        assertFalse(lepesek.SzabadRacspont(new Korong(0, 0, Szin.Sarga)));
+        assertTrue(lepesek.szabadRacspont(new Korong(1, 1, Szin.Kek)));
+        assertTrue(lepesek.szabadRacspont(new Korong(1, 1, Szin.Sarga)));
+        assertFalse(lepesek.szabadRacspont(new Korong(0, 0, Szin.Sarga)));
     }
 
     @Test
-    public void KovetkezinTest() {
+    public void kovetkezinTest() {
         Jatek jatek = new Jatek();
         Lepesek lepesek = jatek.getLepes();
-        assertTrue(lepesek.Kovetkezik(new Korong(1, 1, Szin.Kek)));
-        assertFalse(lepesek.Kovetkezik(new Korong(1, 1, Szin.Sarga)));
+        assertTrue(lepesek.kovetkezik(new Korong(1, 1, Szin.Kek)));
+        assertFalse(lepesek.kovetkezik(new Korong(1, 1, Szin.Sarga)));
     }
 
     @Test
-    public void NyertTest() {
+    public void nyertTest() {
         Jatek jatek = new Jatek();
         Lepesek lepesek = jatek.getLepes();
         lepesek.setKekNyeroKorongok(Arrays.asList(
@@ -73,7 +71,7 @@ public class LepesekTest {
                 new Korong(0, 2, Szin.Kek),
                 new Korong(0, 0, Szin.Kek)
         ));
-        assertTrue(lepesek.Nyert());
+        assertTrue(lepesek.nyert());
         lepesek.setKekNyeroKorongok(Arrays.asList(
                 new Korong(0, 0, Szin.Kek),
                 new Korong(0, 1, Szin.Kek),
@@ -83,7 +81,7 @@ public class LepesekTest {
                 new Korong(1, 0, Szin.Kek),
                 new Korong(1, 4, Szin.Kek)
         ));
-        assertFalse(lepesek.Nyert());
+        assertFalse(lepesek.nyert());
 
         lepesek.setKekNyeroKorongok(Arrays.asList(
                 new Korong(2, 0, Szin.Kek),
@@ -94,7 +92,7 @@ public class LepesekTest {
                 new Korong(1, 0, Szin.Kek),
                 new Korong(1, 4, Szin.Kek)
         ));
-        assertFalse(lepesek.Nyert());
+        assertFalse(lepesek.nyert());
     }
     
     @Test
