@@ -147,7 +147,8 @@ public final class GrafikusVezerlo {
         if (aktivKorong != null) {
             return mozgatas(getKorong(kor));
         }
-
+        
+        logger.info("Hibás Lépés.");
         if (kor.getFill() == Color.TRANSPARENT) {
             return "Jelöljön ki egy " + jatek.getAktivSzin() + " korongot!";
         }
@@ -279,7 +280,6 @@ public final class GrafikusVezerlo {
      * @return léphetnek-e a játékosok
      */
     public static boolean isLephet() {
-        logger.info("Léphetnek-e a játékosok" + lephet);
         return lephet;
     }
 
@@ -290,6 +290,7 @@ public final class GrafikusVezerlo {
      */
     public static void setLephet(boolean lephet) {
         GrafikusVezerlo.lephet = lephet;
+        logger.info("Léphetnek-e a játékosok: " + lephet);
     }
 
     /**
