@@ -1,6 +1,3 @@
-/**
- * A grafikus felület osztályai
- */
 package grafikusFelulet;
 
 import java.io.IOException;
@@ -35,8 +32,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
- * @author Anti
+ * FXML Controller class
+ * 
  */
 public class JatekTablaController implements Initializable {
 

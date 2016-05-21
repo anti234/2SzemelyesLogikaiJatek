@@ -17,8 +17,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
- *
- * @author Anti
+ * 
  */
 public class NyertController implements Initializable {
 

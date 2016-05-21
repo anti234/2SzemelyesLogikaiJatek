@@ -1,6 +1,3 @@
-/**
- * A grafikus felület osztályai
- */
 package grafikusFelulet;
 
 import java.io.IOException;
@@ -15,8 +12,7 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *
- * @author Anti
+ * 
  */
 public class JatekosokNeveiController implements Initializable {
 

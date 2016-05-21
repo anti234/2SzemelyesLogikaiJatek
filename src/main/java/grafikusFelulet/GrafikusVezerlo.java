@@ -1,6 +1,3 @@
-/**
- * A grafikus felület osztályai.
- */
 package grafikusFelulet;
 
 import jatek.Jatek;
