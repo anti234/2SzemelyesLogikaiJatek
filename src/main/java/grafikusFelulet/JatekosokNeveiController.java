@@ -1,3 +1,6 @@
+/**
+ * A grafikus felület osztályai
+ */
 package grafikusFelulet;
 
 import java.io.IOException;
