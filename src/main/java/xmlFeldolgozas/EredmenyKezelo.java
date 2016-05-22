@@ -22,22 +22,25 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
- * Feldolgozza a VegEredmenyek.xml-t, továbbá új elemeket is ad hozzá.
+ * Feldolgozza a VegEredmenyek.xml-t, továbbá új elemeket is adhat hozzá.
  */
 public class EredmenyKezelo {
 
     private final Logger logger = LoggerFactory.getLogger(EredmenyKezelo.class);
-    
+
+    /**
+     * Egy xml fájlt reprezentál.
+     */
     private final File xml;
 
     public EredmenyKezelo(String xml) {
         this.xml = new File(getClass().getResource(xml).getFile());
     }
-    
+
     /**
-     * Visszaad egy eredmény listát a Vegeredmenyek.xml-ből.
-     * 
-     * @return eredmény lista
+     * Visszaad egy {@link Eredmeny} listát a Vegeredmenyek.xml-ből.
+     *
+     * @return {@link Eredmeny} lista
      */
     public List<Eredmeny> eredmenyLista() {
         List<Eredmeny> eredmenyek = new ArrayList<>();
@@ -69,8 +72,8 @@ public class EredmenyKezelo {
     }
 
     /**
-     * Hozzáad egy eredményt a Vegeredmenyek.xml-hez.
-     * 
+     * Hozzáad egy {@link Eredmeny}t a Vegeredmenyek.xml-hez.
+     *
      * @param kekJatekosNeve a kék játékos neve
      * @param sargaJatekosNeve a sárga játékos neve
      * @param nyert a nyerő játékos neve

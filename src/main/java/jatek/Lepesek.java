@@ -9,30 +9,30 @@ import org.slf4j.LoggerFactory;
  * A játék lépéseinek és a lépések előfeltételeinek implementációja.
  */
 public class Lepesek {
-    
+
     private final Logger logger = LoggerFactory.getLogger(Lepesek.class);
     /**
-     * Játékosok korongjai.
+     * Játékosok {@link Korong}jai.
      */
     private final List<Korong> korongok;
     /**
-     * A lépő játékos szine.
+     * A lépő játékos {@link Szin}e.
      */
     private Szin aktivSzin;
 
     /**
-     * A kék játékos nyerő korongjai.
+     * A kék játékos nyerő {@link Korong}jai.
      */
     private List<Korong> kekNyeroKorongok = new ArrayList<>();
     /**
-     * A sárga játékos nyerő korongja.
+     * A sárga játékos nyerő {@link Korong}ja.
      */
     private List<Korong> sargaNyeroKorongok = new ArrayList<>();
 
     /**
      * Létrehozza a játék kezdő állapotát.
      *
-     * @param korongok a játékosok kezdő korongjai.
+     * @param korongok a játékosok kezdő {@link Korong}jai.
      */
     public Lepesek(List<Korong> korongok) {
         this.korongok = korongok;
@@ -45,9 +45,9 @@ public class Lepesek {
      * megvizsgálja, hogy nyert-e a lépő játékos, ha nem érvényes, akkor nem
      * csinál semmit.
      *
-     * @param honnan mozgatandó korong
-     * @param hova cél korong
-     * @return 0, ha nem volt a érvényes a lépés; 1, ha végrehajtotta a lépést,
+     * @param honnan mozgatandó {@link Korong}
+     * @param hova cél {@link Korong}
+     * @return 0, ha nem volt a érvényes a lépés; 1, ha végrehajtotta a lépést;
      * 2, ha ezzel a lépéssel nyert a lépő játékos
      */
     public int lepes(Korong honnan, Korong hova) {
@@ -70,48 +70,49 @@ public class Lepesek {
     }
 
     /**
-     * Meghatározza, hogy érvényes,e a lépés.
+     * Meghatározza, hogy érvényes-e a lépés.
      *
-     * @param honnan mozgatandó korong
-     * @param hova cél korong
+     * @param honnan mozgatandó {@link Korong}
+     * @param hova cél {@link Korong}
      * @return <code>true</code>, ha x és y érvényes koordinaták,
      * <code>false</code> egyébként
      */
     public Boolean ervenyeslepes(Korong honnan, Korong hova) {
-        
+
         return ervenyesRacsPont(hova) && elerhetoRacsPont(honnan, hova)
                 && kovetkezik(honnan);
     }
 
     /**
-     * Meghatározza, hogy a cél korong helyén van-e már korong, vagy
+     * Meghatározza, hogy a cél {@link Korong} helyén van-e már {@link Korong},
+     * és azt, hogy a cél {@link Korong} koordinátái érvényesek-e.
      *
-     * @param hova a cél korong
-     * @return <code>true</code>, ha a cél korong a táblán van, és nincs ott
-     * másik korong <code>false</code> egyébként
+     * @param hova a cél {@link Korong}
+     * @return <code>true</code>, ha a cél {@link Korong} a táblán van, és nincs
+     * ott másik {@link Korong} <code>false</code> egyébként
      */
     public Boolean ervenyesRacsPont(Korong hova) {
         return hova.ervenyesXY() && szabadRacspont(hova);
     }
 
     /**
-     * Meghatározza, hogy van-e korong a cél korong helyén.
+     * Meghatározza, hogy van-e {@link Korong} a cél {@link Korong} helyén.
      *
-     * @param hova mozgatando korong
-     * @return <code>true</code>, ha a cél korong helyén nincs másik korong,
-     * <code>false</code> egyébként
+     * @param hova mozgatando {@link Korong}
+     * @return <code>true</code>, ha a cél {@link Korong} helyén nincs másik
+     * {@link Korong}, <code>false</code> egyébként
      */
     public Boolean szabadRacspont(Korong hova) {
         return !korongok.stream().anyMatch(e -> e.egyenloKoordinatak(hova));
     }
 
     /**
-     * Meghatározza, hogy a honnan és hova korong átlós szomszédok-e.
+     * Meghatározza, hogy a honnan és hova {@link Korong} átlós szomszédok-e.
      *
-     * @param honnan mozgatandó korong
-     * @param hova cél korong
-     * @return <code>true</code>, ha honnan és hova korong átlós szomszédok,
-     * <code>false</code> egyébként
+     * @param honnan mozgatandó {@link Korong}
+     * @param hova cél {@link Korong}
+     * @return <code>true</code>, ha honnan és hova {@link Korong}ok átlós
+     * szomszédok, <code>false</code> egyébként
      */
     public Boolean elerhetoRacsPont(Korong honnan, Korong hova) {
         return (Math.abs(honnan.getX() - hova.getX())) == 1
@@ -119,10 +120,12 @@ public class Lepesek {
     }
 
     /**
+     * Meghatározza, hogy a lépő játékos a {@link Korong}ja-e a honnan
+     * {@link Korong}.
      *
-     *
-     * @param honnan
-     * @return
+     * @param honnan a mozgatandó {@link Korong}
+     * @return <code>true</code>, ha a honnan {@link Korong} a lépő játékos
+     * korongja, <code>false</code> egyébként
      */
     public Boolean kovetkezik(Korong honnan) {
         return honnan.getSzin() == aktivSzin;
@@ -145,8 +148,9 @@ public class Lepesek {
     /**
      * Visszaadja az ellenkező szint.
      *
-     * @param szin egy Szin
-     * @return az ellenkező szin
+     * @param szin egy {@link Szin}
+     * @return {@link Szin#Sarga}, ha a paraméter
+     * {@link Szin#Kek}, {@link Szin#Kek} egyébként
      */
     public Szin getMasikSzin(Szin szin) {
         if (szin == Szin.Kek) {
@@ -157,45 +161,45 @@ public class Lepesek {
     }
 
     /**
-     * Visszaadja a lépő játékos szinét.
+     * Visszaadja a lépő játékos {@link Szin}ét.
      *
-     * @return a lépő játékos szine
+     * @return a lépő játékos {@link Szin}e
      */
     public Szin getAktivSzin() {
         return aktivSzin;
     }
 
     /**
-     * Visszaadja a játéjosok korongjait.
+     * Visszaadja a játéjosok {@link Korong}jait.
      *
-     * @return a játékosok korongjai
+     * @return a játékosok {@link Korong}jai
      */
     public List<Korong> getKorongok() {
         return korongok;
     }
 
     /**
-     * Visszaadja a kek játékos nyerő korongjait.
+     * Visszaadja a kek játékos nyerő {@link Korong}jait.
      *
-     * @return a kék játékos nyerő korongjai
+     * @return a kék játékos nyerő {@link Korong}jai
      */
     public List<Korong> getKekNyeroKorongok() {
         return kekNyeroKorongok;
     }
 
     /**
-     * Visszaadja a sarga játékos nyerő korongjait.
+     * Visszaadja a sarga játékos nyerő {@link Korong}jait.
      *
-     * @return a sarga játékos nyerő korongjai
+     * @return a sarga játékos nyerő {@link Korong}jai
      */
     public List<Korong> getSargaNyeroKorongok() {
         return sargaNyeroKorongok;
     }
 
     /**
-     * Módosítja a kék nyerő korongokat.
+     * Módosítja a kék nyerő {@link Korong}okat.
      *
-     * @param kekNyeroKorongok a kék nyerő korongok
+     * @param kekNyeroKorongok a kék nyerő {@link Korong}ok
      */
     public void setKekNyeroKorongok(List<Korong> kekNyeroKorongok) {
         logger.debug("Kek nyerő korongok:" + kekNyeroKorongok);
@@ -203,9 +207,9 @@ public class Lepesek {
     }
 
     /**
-     * Módosítja a sárga nyerő korongokat.
+     * Módosítja a sárga nyerő {@link Korong}okat.
      *
-     * @param sargaNyeroKorongok a sarga nyerő korongok
+     * @param sargaNyeroKorongok a sarga nyerő {@link Korong}ok
      */
     public void setSargaNyeroKorongok(List<Korong> sargaNyeroKorongok) {
         logger.debug("Sárga nyerő korongok:" + sargaNyeroKorongok);

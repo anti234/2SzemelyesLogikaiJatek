@@ -3,12 +3,9 @@ package Tests;
 import jatek.Jatek;
 import jatek.Korong;
 import jatek.Szin;
-
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class JatekTest {
@@ -28,7 +25,7 @@ public class JatekTest {
         int[][] kekKoordinatak = jatek.getKekKezdoKoordinatak();
         assertEquals(korongok, jatek.getKorongok(kekKoordinatak, Szin.Kek));
     }
-    
+
     @Test
     public void kezdoKorongokTest() {
         Jatek jatek = new Jatek();

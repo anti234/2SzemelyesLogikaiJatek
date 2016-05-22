@@ -17,12 +17,12 @@ import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
- * 
+ *
  */
 public class NyertController implements Initializable {
 
     private final Logger logger = LoggerFactory.getLogger(JatekTablaController.class);
-    
+
     @FXML
     private Button ujJatekButton;
 

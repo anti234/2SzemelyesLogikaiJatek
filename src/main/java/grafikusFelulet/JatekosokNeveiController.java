@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- * 
+ *
  */
 public class JatekosokNeveiController implements Initializable {
 

@@ -3,7 +3,7 @@ package jatek;
 import java.util.Objects;
 
 /**
- * Egy Korongot reprezentáló osztály.
+ * Egy korongot reprezentáló osztály.
  *
  */
 public class Korong {
@@ -22,10 +22,10 @@ public class Korong {
     private Szin szin;
 
     /**
-     * Létrehoz egy korongot szin nélkül.
+     * Létrehoz egy {@link Korong}ot {@link Szin} nélkül.
      *
-     * @param x a korong vízszintes koordinátája
-     * @param y a korong függőleges koordinátája
+     * @param x a {@link Korong} vízszintes koordinátája
+     * @param y a {@link Korong} függőleges koordinátája
      */
     public Korong(int x, int y) {
         this.x = x;
@@ -33,11 +33,11 @@ public class Korong {
     }
 
     /**
-     * Létrehoz egy korongot szinnel.
+     * Létrehoz egy {@link Korong}ot szinnel.
      *
-     * @param x a korong vízszintes koordinátája
-     * @param y a korong függőleges koordinátája
-     * @param szin a korong {@link Szin}e
+     * @param x a {@link Korong} vízszintes koordinátája
+     * @param y a {@link Korong} függőleges koordinátája
+     * @param szin a {@link Korong} {@link Szin}e
      */
     public Korong(int x, int y, Szin szin) {
         this.x = x;
@@ -111,12 +111,13 @@ public class Korong {
     }
 
     /**
-     * Visszaadja, hogy a paraméterként adott korong objektum koordinátái
-     * megegyeznek-e ennek az objektumnak a koordinátáival.
+     * Visszaadja, hogy a paraméterként adott {@link Korong} objektum
+     * koordinátái megegyeznek-e ennek az objektumnak a koordinátáival.
      *
-     * @param korong az összehasonlítandó objectum
-     * @return  <code>true</code>, ha az o objektum koordinátái megegyeznek ennek
-     * az objektumnak a koordinátáival, <code>false</code> egyébként
+     * @param korong az összehasonlítandó {@link Korong} objektum
+     * @return  <code>true</code>, ha a paraméterben megadott {@link Korong}
+     * objektum koordinátái megegyeznek ennek az objektumnak a koordinátáival,
+     * <code>false</code> egyébként
      */
     public boolean egyenloKoordinatak(Korong korong) {
         if (korong == null) {
@@ -127,16 +128,16 @@ public class Korong {
     }
 
     /**
-     * Visszaadja a korong x koordinátáját.
+     * Visszaadja a {@link Korong} x koordinátáját.
      *
-     * @return a korong x koordinátája
+     * @return a {@link Korong} x koordinátája
      */
     public int getX() {
         return x;
     }
 
     /**
-     * Módosítja a korong x koordinátájának az értékét.
+     * Módosítja a {@link Korong} x koordinátájának az értékét.
      *
      * @param x az x koordináta új értéke
      */
@@ -145,16 +146,16 @@ public class Korong {
     }
 
     /**
-     * Visszaadja a korong y koordinátáját.
+     * Visszaadja a {@link Korong} y koordinátáját.
      *
-     * @return a korong y koordinátája
+     * @return a {@link Korong} y koordinátája
      */
     public int getY() {
         return y;
     }
 
     /**
-     * Módosítja a korong y koordinátájának az értékét.
+     * Módosítja a {@link Korong} y koordinátájának az értékét.
      *
      * @param y az y koordináta új értéke
      */
@@ -163,18 +164,18 @@ public class Korong {
     }
 
     /**
-     * Visszaadja a korong {@link Szin}ét
+     * Visszaadja a {@link Korong} {@link Szin}ét
      *
-     * @return a korong szine
+     * @return a {@link Korong} szine
      */
     public Szin getSzin() {
         return szin;
     }
 
     /**
-     * Módosítja a Korong {@link Szin}ét.
+     * Módosítja a {@link Korong} {@link Szin}ét.
      *
-     * @param szin a korong új szine
+     * @param szin a {@link Korong} új {@link Szin}e
      */
     public void setSzin(Szin szin) {
         this.szin = szin;

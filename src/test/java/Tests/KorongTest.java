@@ -2,9 +2,7 @@ package Tests;
 
 import jatek.Korong;
 import jatek.Szin;
-
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class KorongTest {

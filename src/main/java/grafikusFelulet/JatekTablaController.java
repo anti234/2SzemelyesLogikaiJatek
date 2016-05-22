@@ -33,12 +33,12 @@ import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
- * 
+ *
  */
 public class JatekTablaController implements Initializable {
 
     private final Logger logger = LoggerFactory.getLogger(JatekTablaController.class);
-    
+
     @FXML
     private GridPane gridPane;
 
@@ -63,7 +63,7 @@ public class JatekTablaController implements Initializable {
     private void kilepesMenuItemAction(ActionEvent event) {
         Platform.exit();
     }
-    
+
     @FXML
     private void eredmenyekMenuItemAction(ActionEvent event) {
         ObservableList data = FXCollections.observableList(grafikusVezerlo.getEredmenyLista());
@@ -71,15 +71,15 @@ public class JatekTablaController implements Initializable {
         Stage stage = new Stage();
         stage.setWidth(600);
         stage.setHeight(800);
- 
+
         final Label label = new Label("EredményTábla");
         label.setFont(new Font("Arial", 20));
-        
+
         TableView table = new TableView();
         table.setMaxSize(500, 600);
         table.setEditable(true);
         table.setItems(data);
-        
+
         TableColumn kek = new TableColumn("kek");
         kek.setCellValueFactory(new PropertyValueFactory("kekJatekosNeve"));
         TableColumn sarga = new TableColumn("sarga");
@@ -88,14 +88,14 @@ public class JatekTablaController implements Initializable {
         nyert.setCellValueFactory(new PropertyValueFactory("nyeroJatekosNeve"));
         TableColumn lepesszam = new TableColumn("lepesszam");
         lepesszam.setCellValueFactory(new PropertyValueFactory("lepesszam"));
-        
+
         table.getColumns().addAll(kek, sarga, nyert, lepesszam);
- 
+
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
         vbox.setPadding(new Insets(10, 0, 0, 10));
         vbox.getChildren().addAll(label, table);
- 
+
         ((Group) scene.getRoot()).getChildren().addAll(vbox);
         System.out.println("cyxc");
         stage.setScene(scene);

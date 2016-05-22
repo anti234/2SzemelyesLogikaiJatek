@@ -26,7 +26,7 @@ public class Eredmeny {
 
     /**
      * Létrehoz egy eredmény osztályt kezdő értékekkel.
-     * 
+     *
      * @param kekJatekosNeve a kék játékos neve
      * @param sargaJatekosNeve a sarga játékos neve
      * @param nyeroJatekosNeve a nyerő játékos neve
@@ -41,7 +41,7 @@ public class Eredmeny {
 
     /**
      * Visszaadja a kék játékos nevét.
-     * 
+     *
      * @return a kék játékos neve
      */
     public String getKekJatekosNeve() {
@@ -50,7 +50,7 @@ public class Eredmeny {
 
     /**
      * Visszaadja a sárga játékos nevét.
-     * 
+     *
      * @return a sárga játékos neve
      */
     public String getSargaJatekosNeve() {
@@ -59,7 +59,7 @@ public class Eredmeny {
 
     /**
      * Visszaadja a nyerő játékos nevét.
-     * 
+     *
      * @return a nyerő játékos neve
      */
     public String getNyeroJatekosNeve() {
@@ -67,9 +67,9 @@ public class Eredmeny {
     }
 
     /**
-     * Visszaadja a megtett lépés szamot.
-     * 
-     * @return a megtett lépés szam
+     * Visszaadja a megtett lépés számot.
+     *
+     * @return a megtett lépés szám
      */
     public String getLepesszam() {
         return lepesszam.getValue();

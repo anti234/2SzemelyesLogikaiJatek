@@ -21,8 +21,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
-
 import xmlFeldolgozas.Eredmeny;
 import xmlFeldolgozas.EredmenyKezelo;
 
@@ -49,7 +47,7 @@ public class EredmenyKezeloTest {
     }
 
     @Test
-    public void eredmenyListaTest_eredmenyHozzaadasaTest() {
+    public void eredmenyKezeloTestTest() {
         EredmenyKezelo eredmenykezelo = new EredmenyKezelo("/xml/VegEredmenyekTest.xml");
         eredmenykezelo.eredmenyHozzaadasa("kekj", "sargaj", "sargaj", 32);
         Eredmeny eredmeny = eredmenykezelo.eredmenyLista().get(0);
@@ -57,7 +55,7 @@ public class EredmenyKezeloTest {
         assertEquals(eredmeny.getSargaJatekosNeve(), "sargaj");
         assertEquals(eredmeny.getNyeroJatekosNeve(), "sargaj");
         assertEquals(eredmeny.getLepesszam(), "32");
-        
+
         eredmenykezelo.eredmenyHozzaadasa("kekj2", "sargaj2", "sargaj2", 322);
         eredmeny = eredmenykezelo.eredmenyLista().get(1);
         assertEquals(eredmeny.getKekJatekosNeve(), "kekj2");
