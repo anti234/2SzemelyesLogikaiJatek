@@ -127,6 +127,7 @@ public class JatekTablaController implements Initializable {
                 if (node instanceof Circle) {
                     if (node.getBoundsInParent().contains(event.getX(), event.getY())) {
                         uzenetek.setText(grafikusVezerlo.esemeny((Circle) node));
+                        logger.debug("Hiba üzenet: " + uzenetek.getText());
                         break;
                     }
                 }

@@ -86,6 +86,7 @@ public class Korong {
         hash = 31 * hash + this.x;
         hash = 31 * hash + this.y;
         hash = 31 * hash + Objects.hashCode(this.szin);
+        System.out.println(Objects.hashCode(this.szin));
         return hash;
     }
 

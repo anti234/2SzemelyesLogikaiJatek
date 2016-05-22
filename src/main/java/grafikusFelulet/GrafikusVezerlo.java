@@ -174,6 +174,7 @@ public final class GrafikusVezerlo {
             aktivKorong = null;
             if (lepes == 2) {
                 nyert = true;
+                logger.info(getAktivJatekos() + " nyert!");
                 eredmenyMentese();
             }
             lepesSzam++;

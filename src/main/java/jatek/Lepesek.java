@@ -52,7 +52,7 @@ public class Lepesek {
      */
     public int lepes(Korong honnan, Korong hova) {
         try {
-            if (ervenyeslepes(honnan, hova)) {
+            if (ervenyesLepes(honnan, hova)) {
                 hova.setSzin(aktivSzin);
                 korongok.set(korongok.indexOf(honnan), hova);
                 logger.info("lépés: " + honnan + "->" + hova);
@@ -77,7 +77,7 @@ public class Lepesek {
      * @return <code>true</code>, ha x és y érvényes koordinaták,
      * <code>false</code> egyébként
      */
-    public Boolean ervenyeslepes(Korong honnan, Korong hova) {
+    public Boolean ervenyesLepes(Korong honnan, Korong hova) {
 
         return ervenyesRacsPont(hova) && elerhetoRacsPont(honnan, hova)
                 && kovetkezik(honnan);
