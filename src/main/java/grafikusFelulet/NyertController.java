@@ -1,3 +1,4 @@
+// CHECKSTYLE:OFF
 package grafikusFelulet;
 
 import java.io.IOException;

@@ -75,11 +75,13 @@ public class Korong {
         return ervenyesX() && ervenyesY();
     }
 
+    @SuppressWarnings("checkstyle:javadocmethod")
     @Override
     public String toString() {
         return szin + "Korong(" + "x=" + x + ", y=" + y + ')';
     }
 
+    @SuppressWarnings("checkstyle:javadocmethod")
     @Override
     public int hashCode() {
         int hash = 7;
@@ -90,6 +92,7 @@ public class Korong {
         return hash;
     }
 
+    @SuppressWarnings("checkstyle:javadocmethod")
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

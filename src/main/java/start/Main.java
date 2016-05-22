@@ -1,3 +1,4 @@
+// CHECKSTYLE:OFF
 package start;
 
 import java.io.IOException;
