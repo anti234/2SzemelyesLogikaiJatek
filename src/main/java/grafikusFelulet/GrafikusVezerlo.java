@@ -23,10 +23,10 @@ import xmlFeldolgozas.EredmenyKezelo;
  */
 public final class GrafikusVezerlo {
 
-    private static final Logger logger = LoggerFactory.getLogger(GrafikusVezerlo.class);
-    private static String kekJatekosNeve = "Kék Játékos";
-    private static String sargaJatekosNeve = "Sárga Játékos";
-    private static boolean lephet;
+    private final Logger logger = LoggerFactory.getLogger(GrafikusVezerlo.class);
+    private String kekJatekosNeve = "Kék Játékos";
+    private String sargaJatekosNeve = "Sárga Játékos";
+    private boolean lephet;
 
     private final GridPane jatekTabla;
     private Jatek jatek;
@@ -211,7 +211,7 @@ public final class GrafikusVezerlo {
      *
      * @return a kék játékos neve
      */
-    public static String getKekJatekosNeve() {
+    public String getKekJatekosNeve() {
         return kekJatekosNeve;
     }
 
@@ -220,8 +220,8 @@ public final class GrafikusVezerlo {
      *
      * @param kekJatekosNeve a kék játékos új neve.
      */
-    public static void setKekJatekosNeve(String kekJatekosNeve) {
-        GrafikusVezerlo.kekJatekosNeve = kekJatekosNeve.length() > 0
+    public void setKekJatekosNeve(String kekJatekosNeve) {
+        this.kekJatekosNeve = kekJatekosNeve.length() > 0
                 ? kekJatekosNeve : "1. Játékos";
         logger.info("Kék játékos új neve: " + getKekJatekosNeve());
     }
@@ -231,7 +231,7 @@ public final class GrafikusVezerlo {
      *
      * @return a sárga játékos neve
      */
-    public static String getSargaJatekosNeve() {
+    public String getSargaJatekosNeve() {
         return sargaJatekosNeve;
     }
 
@@ -240,9 +240,9 @@ public final class GrafikusVezerlo {
      *
      * @param sargaJatekosNeve a sárga játékos új neve.
      */
-    public static void setSargaJatekosNeve(String sargaJatekosNeve) {
+    public void setSargaJatekosNeve(String sargaJatekosNeve) {
         logger.info("Sárga játékos új neve: " + sargaJatekosNeve);
-        GrafikusVezerlo.sargaJatekosNeve = sargaJatekosNeve.length() > 0
+        this.sargaJatekosNeve = sargaJatekosNeve.length() > 0
                 ? sargaJatekosNeve : "2. Játékos";
         logger.info("Sárga játékos új neve: " + getSargaJatekosNeve());
     }
@@ -253,7 +253,7 @@ public final class GrafikusVezerlo {
      * @return <code>true</code>, ha léphetnek a játékosok, <code>false</code>
      * egyébként.
      */
-    public static boolean isLephet() {
+    public boolean isLephet() {
         return lephet;
     }
 
@@ -262,8 +262,8 @@ public final class GrafikusVezerlo {
      *
      * @param lephet egy logikai értéket reprezentál
      */
-    public static void setLephet(boolean lephet) {
-        GrafikusVezerlo.lephet = lephet;
+    public void setLephet(boolean lephet) {
+        this.lephet = lephet;
         logger.info("Léphetnek-e a játékosok: " + lephet);
     }
 

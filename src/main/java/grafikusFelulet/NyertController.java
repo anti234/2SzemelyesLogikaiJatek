@@ -16,10 +16,6 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * FXML Controller class
- *
- */
 public class NyertController implements Initializable {
 
     private final Logger logger = LoggerFactory.getLogger(JatekTablaController.class);
@@ -37,6 +33,7 @@ public class NyertController implements Initializable {
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
+            stage.setTitle("Játék Tábla");
             stage.show();
             stage = (Stage) ujJatekButton.getScene().getWindow();
             stage.close();

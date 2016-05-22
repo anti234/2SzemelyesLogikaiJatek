@@ -32,10 +32,6 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * FXML Controller class
- *
- */
 public class JatekTablaController implements Initializable {
 
     private final Logger logger = LoggerFactory.getLogger(JatekTablaController.class);
@@ -57,7 +53,7 @@ public class JatekTablaController implements Initializable {
     @FXML
     private void ujJatekMenuItemAction(ActionEvent event) {
         grafikusVezerlo = new GrafikusVezerlo(gridPane);
-        GrafikusVezerlo.setLephet(true);
+        grafikusVezerlo.setLephet(true);
     }
 
     @FXML
@@ -70,6 +66,7 @@ public class JatekTablaController implements Initializable {
         ObservableList data = FXCollections.observableList(grafikusVezerlo.getEredmenyLista());
         Scene scene = new Scene(new Group());
         Stage stage = new Stage();
+        stage.setTitle("Eredmények");
         stage.setWidth(600);
         stage.setHeight(800);
 
@@ -98,7 +95,6 @@ public class JatekTablaController implements Initializable {
         vbox.getChildren().addAll(label, table);
 
         ((Group) scene.getRoot()).getChildren().addAll(vbox);
-        System.out.println("cyxc");
         stage.setScene(scene);
         stage.show();
     }
@@ -106,12 +102,15 @@ public class JatekTablaController implements Initializable {
     @FXML
     private void atnevezesMenuItemAction(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/JatekosokNevei.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/JatekosokNevei.fxml"));
+            Parent root = loader.load();
+            loader.<JatekosokNeveiController>getController().initData(grafikusVezerlo);
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setScene(scene);
+            stage.setTitle("Átnevezés");
             stage.show();
-            GrafikusVezerlo.setLephet(false);
+            grafikusVezerlo.setLephet(false);
         } catch (IOException ex) {
             logger.error(ex.getMessage());
         }
@@ -124,20 +123,16 @@ public class JatekTablaController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setScene(scene);
+            stage.setTitle("Segítség");
             stage.show();
-            GrafikusVezerlo.setLephet(false);
         } catch (IOException ex) {
             logger.error(ex.getMessage());
         }
     }
 
     @FXML
-    private void betoltesMenuItem(ActionEvent event) {
-    }
-
-    @FXML
     public void gridPaneMouseAction(MouseEvent event) {
-        if (GrafikusVezerlo.isLephet()) {
+        if (grafikusVezerlo.isLephet()) {
             for (Node node : gridPane.getChildren()) {
                 if (node instanceof Circle) {
                     if (node.getBoundsInParent().contains(event.getX(), event.getY())) {
@@ -174,19 +169,18 @@ public class JatekTablaController implements Initializable {
         grafikusVezerlo = new GrafikusVezerlo(gridPane);
         kovetkezoJatekos.setText(grafikusVezerlo.getAktivJatekos() + " következik!");
         kovetkezoJatekos.setTextFill(grafikusVezerlo.getAktivColor());
-        GrafikusVezerlo.setLephet(true);
+        grafikusVezerlo.setLephet(true);
     }
 
     private void nyert() {
         try {
-            Stage stage;
-            Parent root;
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Nyert.fxml"));
-            root = loader.load();
+            Parent root = loader.load();
             loader.<NyertController>getController().initData(grafikusVezerlo.getAktivJatekos() + " nyert!");
             Scene scene = new Scene(root);
-            stage = (Stage) uzenetek.getScene().getWindow();
+            Stage stage = (Stage) uzenetek.getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle(grafikusVezerlo.getAktivJatekos() + " nyert!");
             stage.show();
         } catch (IOException ex) {
             logger.error(ex.getMessage());

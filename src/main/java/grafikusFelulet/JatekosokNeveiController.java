@@ -10,10 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- */
 public class JatekosokNeveiController implements Initializable {
 
     @FXML
@@ -25,20 +21,27 @@ public class JatekosokNeveiController implements Initializable {
     @FXML
     private Button jatekButton;
 
+    private GrafikusVezerlo grafikusVezerlo;
+
     @FXML
     private void jatekButtonAction(ActionEvent event) {
-        GrafikusVezerlo.setKekJatekosNeve(kekJatekosNeve.getText());
-        GrafikusVezerlo.setSargaJatekosNeve(sargaJatekosNeve.getText());
+        grafikusVezerlo.setKekJatekosNeve(kekJatekosNeve.getText());
+        grafikusVezerlo.setSargaJatekosNeve(sargaJatekosNeve.getText());
         Stage stage = (Stage) jatekButton.getScene().getWindow();
         stage.close();
-        GrafikusVezerlo.setLephet(true);
+        grafikusVezerlo.setLephet(true);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if (GrafikusVezerlo.getKekJatekosNeve() != null) {
-            kekJatekosNeve.setText(GrafikusVezerlo.getKekJatekosNeve());
-            sargaJatekosNeve.setText(GrafikusVezerlo.getSargaJatekosNeve());
+
+    }
+
+    public void initData(GrafikusVezerlo grafikusVezerlo) {
+        this.grafikusVezerlo = grafikusVezerlo;
+        if (grafikusVezerlo.getKekJatekosNeve() != null) {
+            kekJatekosNeve.setText(grafikusVezerlo.getKekJatekosNeve());
+            sargaJatekosNeve.setText(grafikusVezerlo.getSargaJatekosNeve());
         }
     }
 
