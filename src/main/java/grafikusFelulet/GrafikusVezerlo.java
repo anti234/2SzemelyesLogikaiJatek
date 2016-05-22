@@ -24,51 +24,21 @@ import xmlFeldolgozas.EredmenyKezelo;
 public final class GrafikusVezerlo {
 
     private static final Logger logger = LoggerFactory.getLogger(GrafikusVezerlo.class);
-    /**
-     * A kék játékos neve.
-     */
     private static String kekJatekosNeve = "Kék Játékos";
-    /**
-     * A sárga játékos neve.
-     */
     private static String sargaJatekosNeve = "Sárga Játékos";
-    /**
-     * Lephetnek-e a játékosok.
-     */
     private static boolean lephet;
 
-    /**
-     * A grafikus felület játék táblája.
-     */
     private final GridPane jatekTabla;
-
-    /**
-     * A játék funkcionalitását valósítja meg.
-     */
     private Jatek jatek;
-    /**
-     * A kijelölt {@link Korong}. Ha nincs kijelölt {@link Korong}, akkor az
-     * értéke <code>null</code>.
-     */
     private Korong aktivKorong;
-    /**
-     * Nyert-e valamelyik játékos.
-     */
     private boolean nyert;
-
-    /**
-     * A megtett lépések száma.
-     */
     private int lepesSzam;
-    /**
-     * Az xml feldolgozását valósítja meg.
-     */
     private final EredmenyKezelo eredmenykezelo;
 
     /**
      * Létrehoz egy GrafikusVezérlő osztályt kezdő értékekkel.
      *
-     * @param gridPane a játék táblát reprezentáló osztály({@link GridPane})
+     * @param gridPane a játék táblát reprezentáló osztály
      */
     public GrafikusVezerlo(GridPane gridPane) {
         jatekTabla = gridPane;
@@ -77,7 +47,7 @@ public final class GrafikusVezerlo {
     }
 
     /**
-     * új játékot indít, tehát visszaállítja a kezdő állapotot.
+     * Új játékot indít, tehát visszaállítja a kezdő állapotot.
      */
     public void ujJatek() {
         korngokTorlese();
@@ -103,7 +73,7 @@ public final class GrafikusVezerlo {
     /**
      * Egy {@link Korong}ot ábrázol a játék táblán.
      *
-     * @param korong egy {@link Korong} repzentáló objektum
+     * @param korong egy {@link Korong}ot repzentál
      */
     public void korongSzinezese(Korong korong) {
         Circle kor = (Circle) jatekTabla.getChildren().get(korong.getX() * 5 + korong.getY());
@@ -113,8 +83,8 @@ public final class GrafikusVezerlo {
     /**
      * Egy {@link Korong}ot szinez a játék táblán.
      *
-     * @param korong egy {@link Korong} repzentáló objektum
-     * @param color a {@link Korong} szine({@link Color})
+     * @param korong egy {@link Korong} repzentál
+     * @param color a {@link Korong} szine
      */
     public void korongSzinezese(Korong korong, Color color) {
         Circle kor = (Circle) jatekTabla.getChildren().get(korong.getX() * 5 + korong.getY());
@@ -136,8 +106,8 @@ public final class GrafikusVezerlo {
      *
      * @param kor egy {@link Korong}ot reprezentáló {@link Circle} objektum,
      * amire a felhasználó rákattintott
-     * @return üres {@link String}, ha szabályos a kijelölés|lépés, egyébként
-     * hiba üzenet.
+     * @return üres {@link String}, ha szabályos a kijelölés vagy a lépés,
+     * egyébként hiba üzenet
      */
     public String esemeny(Circle kor) {
         if (getColor(jatek.getAktivSzin()) == kor.getFill()) {
@@ -162,7 +132,7 @@ public final class GrafikusVezerlo {
      * grafikus felületen.
      *
      * @param korong egy {@link Korong} repzentáló objektum
-     * @return üres {@link String}, ha szabályos a lépés, egyébként hiba üzenet.
+     * @return üres {@link String}, ha szabályos a lépés, egyébként hiba üzenet
      */
     public String mozgatas(Korong korong) {
 
@@ -203,7 +173,7 @@ public final class GrafikusVezerlo {
     /**
      * Visszaad egy {@link Korong}ot, amit a kor paraméterből határoz meg.
      *
-     * @param kor egy korongot reprezentáló {@link Circle} objektum
+     * @param kor egy {@link Korong}ot reprezentáló {@link Circle} objektum
      * @return {@link Korong}ot reprezentáló osztály
      */
     public Korong getKorong(Circle kor) {
@@ -225,8 +195,7 @@ public final class GrafikusVezerlo {
     /**
      * Visszaad egy {@link Szin}t, amit a color paraméterből határoz meg.
      *
-     * @param color egy szint reprezentáló osztály a grafikus
-     * felületen({@link Color})
+     * @param color egy szint reprezentáló osztály a grafikus felületen
      * @return egy {@link Szin} objektum
      */
     public Szin getSzin(Color color) {
@@ -289,7 +258,7 @@ public final class GrafikusVezerlo {
     }
 
     /**
-     * Módosítja a lephet változó értékét.
+     * Módosítja a <code>lephet</code> változó értékét.
      *
      * @param lephet egy logikai értéket reprezentál
      */

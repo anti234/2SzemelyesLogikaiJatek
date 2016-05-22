@@ -118,6 +118,20 @@ public class JatekTablaController implements Initializable {
     }
 
     @FXML
+    private void segítsegMenuItemAction(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Segitseg.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            GrafikusVezerlo.setLephet(false);
+        } catch (IOException ex) {
+            logger.error(ex.getMessage());
+        }
+    }
+
+    @FXML
     private void betoltesMenuItem(ActionEvent event) {
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="299.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea editable="false" layoutX="52.0" layoutY="34.0" prefHeight="231.0" prefWidth="479.0" text="A játék működése: &#10;Jelölje ki azt a korongok, amelyikkel lépni szeretne, ekkor a kijelölt &#10;korong pirosra vált, majd kattintson arra a rácspontra, ahova lépni &#10;szeretne. &#10;&#10;Játék szabály: &#10;A játékosok felváltva lépnek egy saját koronggal átlósan egy &#10;szomszédos üres rácspontba. Az a Játékos nyer, akinek hamarabb &#10;sikerül átjuttatni az összes korongját a tábla szemköztni oldalára.">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

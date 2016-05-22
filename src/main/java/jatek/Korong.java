@@ -8,21 +8,12 @@ import java.util.Objects;
  */
 public class Korong {
 
-    /**
-     * A korong vízszintes koordinátája.
-     */
     private int x;
-    /**
-     * A korong függőleges koordinátája.
-     */
     private int y;
-    /**
-     * A korong {@link Szin}e.
-     */
     private Szin szin;
 
     /**
-     * Létrehoz egy {@link Korong}ot {@link Szin} nélkül.
+     * Létrehoz egy {@link Korong}ot koordinátákkal, {@link Szin} nélkül.
      *
      * @param x a {@link Korong} vízszintes koordinátája
      * @param y a {@link Korong} függőleges koordinátája
@@ -33,7 +24,7 @@ public class Korong {
     }
 
     /**
-     * Létrehoz egy {@link Korong}ot szinnel.
+     * Létrehoz egy {@link Korong}ot koordinátákkal és {@link Szin}nel.
      *
      * @param x a {@link Korong} vízszintes koordinátája
      * @param y a {@link Korong} függőleges koordinátája
@@ -115,8 +106,8 @@ public class Korong {
     }
 
     /**
-     * Visszaadja, hogy a paraméterként adott {@link Korong} objektum
-     * koordinátái megegyeznek-e ennek az objektumnak a koordinátáival.
+     * Visszaadja, hogy a <code>korong</code> koordinátái megegyeznek-e ennek az
+     * objektumnak a koordinátáival.
      *
      * @param korong az összehasonlítandó {@link Korong} objektum
      * @return  <code>true</code>, ha a paraméterben megadott {@link Korong}
@@ -168,9 +159,9 @@ public class Korong {
     }
 
     /**
-     * Visszaadja a {@link Korong} {@link Szin}ét
+     * Visszaadja a {@link Korong} {@link Szin}ét.
      *
-     * @return a {@link Korong} szine
+     * @return a {@link Korong} {@link Szin}e
      */
     public Szin getSzin() {
         return szin;

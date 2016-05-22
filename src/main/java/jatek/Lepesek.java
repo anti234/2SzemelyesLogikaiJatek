@@ -11,22 +11,11 @@ import org.slf4j.LoggerFactory;
 public class Lepesek {
 
     private final Logger logger = LoggerFactory.getLogger(Lepesek.class);
-    /**
-     * Játékosok {@link Korong}jai.
-     */
+
     private final List<Korong> korongok;
-    /**
-     * A lépő játékos {@link Szin}e.
-     */
     private Szin aktivSzin;
 
-    /**
-     * A kék játékos nyerő {@link Korong}jai.
-     */
     private List<Korong> kekNyeroKorongok = new ArrayList<>();
-    /**
-     * A sárga játékos nyerő {@link Korong}ja.
-     */
     private List<Korong> sargaNyeroKorongok = new ArrayList<>();
 
     /**
@@ -41,14 +30,13 @@ public class Lepesek {
     }
 
     /**
-     * Meghatározza, hogy a lépés érvényes-e, ha érvényes, akkor lép és
-     * megvizsgálja, hogy nyert-e a lépő játékos, ha nem érvényes, akkor nem
-     * csinál semmit.
+     * Ha érvényes a lépés, akkor végrehajtja a lépést, és megvizsgálja, hogy
+     * nyert-e a lépő játékos, ha nem érvényes, akkor nem csinál semmit.
      *
      * @param honnan mozgatandó {@link Korong}
      * @param hova cél {@link Korong}
-     * @return 0, ha nem volt a érvényes a lépés; 1, ha végrehajtotta a lépést;
-     * 2, ha ezzel a lépéssel nyert a lépő játékos
+     * @return 0, ha nem volt lépés; 1, ha végrehajtotta a lépést; 2, ha ezzel a
+     * lépéssel nyert a lépő játékos
      */
     public int lepes(Korong honnan, Korong hova) {
         try {
@@ -84,35 +72,38 @@ public class Lepesek {
     }
 
     /**
-     * Meghatározza, hogy a cél {@link Korong} helyén van-e már {@link Korong},
-     * és azt, hogy a cél {@link Korong} koordinátái érvényesek-e.
+     * Meghatározza, hogy a <code>hova</code> {@link Korong} helyén van-e már
+     * {@link Korong}, és azt, hogy a <code>hova</code> {@link Korong}
+     * koordinátái érvényesek-e.
      *
      * @param hova a cél {@link Korong}
-     * @return <code>true</code>, ha a cél {@link Korong} a táblán van, és nincs
-     * ott másik {@link Korong} <code>false</code> egyébként
+     * @return <code>true</code>, ha a <code>hova</code> {@link Korong} a táblán
+     * van, és nincs ott másik {@link Korong}, <code>false</code> egyébként
      */
     public Boolean ervenyesRacsPont(Korong hova) {
         return hova.ervenyesXY() && szabadRacspont(hova);
     }
 
     /**
-     * Meghatározza, hogy van-e {@link Korong} a cél {@link Korong} helyén.
+     * Meghatározza, hogy van-e {@link Korong} a <code>hova</code>
+     * {@link Korong} helyén.
      *
      * @param hova mozgatando {@link Korong}
-     * @return <code>true</code>, ha a cél {@link Korong} helyén nincs másik
-     * {@link Korong}, <code>false</code> egyébként
+     * @return <code>true</code>, ha a <code>hova</code> {@link Korong} helyén
+     * nincs másik {@link Korong}, <code>false</code> egyébként
      */
     public Boolean szabadRacspont(Korong hova) {
         return !korongok.stream().anyMatch(e -> e.egyenloKoordinatak(hova));
     }
 
     /**
-     * Meghatározza, hogy a honnan és hova {@link Korong} átlós szomszédok-e.
+     * Meghatározza, hogy a <code>honnan</code> és <code>hova</code>
+     * {@link Korong}ok átlós szomszédok-e.
      *
      * @param honnan mozgatandó {@link Korong}
      * @param hova cél {@link Korong}
-     * @return <code>true</code>, ha honnan és hova {@link Korong}ok átlós
-     * szomszédok, <code>false</code> egyébként
+     * @return <code>true</code>, ha <code>honnan</code> és <code>hova</code>
+     * {@link Korong}ok átlós szomszédok, <code>false</code> egyébként
      */
     public Boolean elerhetoRacsPont(Korong honnan, Korong hova) {
         return (Math.abs(honnan.getX() - hova.getX())) == 1
@@ -120,12 +111,12 @@ public class Lepesek {
     }
 
     /**
-     * Meghatározza, hogy a lépő játékos a {@link Korong}ja-e a honnan
-     * {@link Korong}.
+     * Meghatározza, hogy a lépő játékos a {@link Korong}ja-e a
+     * <code>honnan</code> {@link Korong}.
      *
      * @param honnan a mozgatandó {@link Korong}
-     * @return <code>true</code>, ha a honnan {@link Korong} a lépő játékos
-     * korongja, <code>false</code> egyébként
+     * @return <code>true</code>, ha a <code>honnan</code> {@link Korong} a lépő
+     * játékos korongja, <code>false</code> egyébként
      */
     public Boolean kovetkezik(Korong honnan) {
         return honnan.getSzin() == aktivSzin;

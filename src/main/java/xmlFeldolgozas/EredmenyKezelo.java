@@ -28,17 +28,19 @@ public class EredmenyKezelo {
 
     private final Logger logger = LoggerFactory.getLogger(EredmenyKezelo.class);
 
-    /**
-     * Egy xml fájlt reprezentál.
-     */
     private final File xml;
 
+    /**
+     * Létrehoz egy {@link EredmenyKezelo} objektumot.
+     *
+     * @param xml az xml lokális elérési útja
+     */
     public EredmenyKezelo(String xml) {
         this.xml = new File(getClass().getResource(xml).getFile());
     }
 
     /**
-     * Visszaad egy {@link Eredmeny} listát a Vegeredmenyek.xml-ből.
+     * Visszaad egy {@link Eredmeny} listát az {@link EredmenyKezelo#xml}-ből.
      *
      * @return {@link Eredmeny} lista
      */
@@ -72,7 +74,7 @@ public class EredmenyKezelo {
     }
 
     /**
-     * Hozzáad egy {@link Eredmeny}t a Vegeredmenyek.xml-hez.
+     * Hozzáad egy {@link Eredmeny}t az @link EredmenyKezelo#xml}-hez.
      *
      * @param kekJatekosNeve a kék játékos neve
      * @param sargaJatekosNeve a sárga játékos neve

@@ -11,25 +11,17 @@ import org.slf4j.LoggerFactory;
 public final class Jatek {
 
     private final Logger logger = LoggerFactory.getLogger(Jatek.class);
-    /**
-     * A sárga játékos kezdő koordinátáit határozza meg.
-     */
+
     private final int[][] sargaKezdoKoordinatak
             = {{3, 0}, {3, 4}, {4, 0}, {4, 1}, {4, 2}, {4, 3}, {4, 4}};
 
-    /**
-     * A kék játékos kezdő koordinátáit határozza meg.
-     */
     private final int[][] kekKezdoKoordinatak
             = {{0, 0}, {0, 1}, {0, 2}, {0, 3}, {0, 4}, {1, 0}, {1, 4}};
 
-    /**
-     * A játék lépéseit, a játék lépéseinek előfeltételeit határozza meg.
-     */
     private final Lepesek lepes;
 
     /**
-     * Létrehozza a {@link Jatek} kezdő állapotát.
+     * Létrehozza a játék kezdő állapotát.
      */
     public Jatek() {
         lepes = new Lepesek(kezdoKorongok());
@@ -40,7 +32,7 @@ public final class Jatek {
     /**
      * Visszaadja a kezdő koordinátákból a játékosok {@link Korong}jait.
      *
-     * @return a játékosok kezdo {@link Korong}jai
+     * @return a játékosok kezdő {@link Korong}jai
      */
     public List<Korong> kezdoKorongok() {
         logger.info("Kezdőkorongok inicializálása.");
@@ -70,7 +62,7 @@ public final class Jatek {
     }
 
     /**
-     * visszaad a paraméterekből egy korongokból álló listát
+     * Visszaad a paraméterekből egy korongokból álló listát.
      *
      * @param koordinatak a {@link Korong}ok koordinátái
      * @param szin a {@link Korong}ok {@link Szin}e
@@ -124,18 +116,18 @@ public final class Jatek {
     }
 
     /**
-     * Visszadja a sárga játékos kezdő koordinátáit
+     * Visszadja a sárga játékos kezdő koordinátáit.
      *
-     * @return a sárga játékos kezdő koordinátái tömben
+     * @return a sárga játékos kezdő koordinátái
      */
     public int[][] getSargaKezdoKoordinatak() {
         return sargaKezdoKoordinatak;
     }
 
     /**
-     * Visszadja a kék játékos kezdő koordinátáit
+     * Visszadja a kék játékos kezdő koordinátáit.
      *
-     * @return a kek játékos kezdő koordinátái tömben
+     * @return a kek játékos kezdő koordinátái
      */
     public int[][] getKekKezdoKoordinatak() {
         return kekKezdoKoordinatak;
