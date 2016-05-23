@@ -2,7 +2,8 @@
 
 Leírás
 ------
-Ez az alkalmazás beadandó projekt a Programozási Technológia és a Programozási Környezetek tárgyakhoz a [Debreceni Egyetem Informatika Karán](http://w1.inf.unideb.hu/).
+Ez az alkalmazás beadandó projekt a [Programozási Technológia](http://www.inf.unideb.hu/~jeszy/prt/) és a 
+[Programozási Környezetek](http://www.inf.unideb.hu/~jeszy/progkorny/) tárgyakhoz a [Debreceni Egyetem Informatika Karán](http://w1.inf.unideb.hu/).
 
 Alkalmazás
 ----------

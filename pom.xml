@@ -14,6 +14,9 @@
             <email>anti222@hotmail.hu</email>
         </developer>
     </developers>
+    <scm>
+        <url>https://github.com/anti234/2SzemelyesLogikaiJatek</url>
+    </scm>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
