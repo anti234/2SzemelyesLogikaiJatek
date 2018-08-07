@@ -23,6 +23,8 @@ sikerül átjuttatni az összes korongját a tábla szemköztni oldalára.
 
 Tartalmaz
 ---------
+* Maven
+* Java
 * Üzleti Logika
 * JUnit Tesztek
 * JavaFX Felhasználói Felület
@@ -32,7 +34,7 @@ Tartalmaz
 
 Használat
 ---------
-pom.xml -t tartalmazó mappában nyiss egy terminált.
+A pom.xml -t tartalmazó mappában nyiss egy terminált.
 
 1. módszer:
 
