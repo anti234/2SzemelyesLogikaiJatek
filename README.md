@@ -32,14 +32,14 @@ Tartalmaz
 
 Használat
 ---------
-Két módon történhet:
+pom.xml -t tartalmazó mappában nyiss egy terminált.
+
+1. módszer:
+
 > $ mvn package
+> $ java -jar target/LogikaiJatek-1.0-jar-with-dependencies
 
-> $ cd target
-
-> $ java -jar LogikaiJatek-1.0-jar-with-dependencies
-
-Vagy
+2. módszer:
 
 > $ mvn compile exec:java
 
