@@ -37,6 +37,7 @@ pom.xml -t tartalmazó mappában nyiss egy terminált.
 1. módszer:
 
 > $ mvn package
+
 > $ java -jar target/LogikaiJatek-1.0-jar-with-dependencies
 
 2. módszer:
