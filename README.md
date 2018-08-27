@@ -7,7 +7,7 @@ Ez az alkalmazás beadandó projekt a [Programozási Technológia](http://www.in
 
 Alkalmazás
 ----------
-Egy két személyes logikai játék.
+Két személyes logikai játék.
 
 A játék működése
 ----------------
